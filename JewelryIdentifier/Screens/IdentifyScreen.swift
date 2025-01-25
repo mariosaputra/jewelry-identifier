@@ -1,4 +1,5 @@
 import SwiftUI
+import RevenueCatUI
 import AIProxy
 
 struct IdentifyScreen: View {
@@ -45,7 +46,11 @@ struct IdentifyScreen: View {
             .fullScreenCover(isPresented: $showPurchaseSheet, onDismiss: {
                 hasFinishedOnboarding = true
             }) {
-                PurchaseView(isPresented: $showPurchaseSheet, hasCooldown: true)
+//                PurchaseView(isPresented: $showPurchaseSheet, hasCooldown: true)
+                if let offerings = purchaseModel.offerings,
+                   let promoOffering = offerings.offering(identifier: "promo") {
+                    PaywallView(offering: promoOffering, displayCloseButton: true)
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.visible, for: .navigationBar)

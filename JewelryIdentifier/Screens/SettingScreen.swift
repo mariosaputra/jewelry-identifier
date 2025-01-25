@@ -8,6 +8,8 @@
 import SwiftUI
 import StoreKit
 import MessageUI
+import RevenueCat
+import RevenueCatUI
 
 struct SettingScreen: View {
 
@@ -89,7 +91,9 @@ struct SettingScreen: View {
                                 }
                             }
                             .sheet(isPresented: $isShowingMailView) {
-                                MailView(result: self.$result, toRecipients: ["support@marioapps.com"])
+                                MailView(result: self.$result, 
+                                        toRecipients: ["support@marioapps.com"],
+                                        subject: "Jewelry Identifier Support")
                             }
                             
                         } else {
@@ -133,6 +137,19 @@ struct SettingScreen: View {
                         
                         
 
+                        HStack {
+                            Image(systemName: "person")
+                            Text("User ID: \(Purchases.shared.appUserID)")
+                                .lineLimit(1)
+                                .truncationMode(.middle)
+                            Button(action: {
+                                UIPasteboard.general.string = Purchases.shared.appUserID
+                            }) {
+                                Image(systemName: "doc.on.doc")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                    
                         HStack {
                             Image(systemName: "v.square")
                             Text("App Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown")")
@@ -208,7 +225,11 @@ struct SettingScreen: View {
             TOSView()
         }
         .fullScreenCover(isPresented: $showPurchaseSheet) {
-            PurchaseView(isPresented: $showPurchaseSheet)
+//            PurchaseView(isPresented: $showPurchaseSheet)
+            if let offerings = purchaseModel.offerings,
+               let promoOffering = offerings.offering(identifier: "promo") {
+                PaywallView(offering: promoOffering, displayCloseButton: true)
+            }
         }
     }
 }

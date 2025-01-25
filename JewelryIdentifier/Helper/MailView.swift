@@ -8,6 +8,7 @@ struct MailView: UIViewControllerRepresentable {
     @Binding var result: Result<MFMailComposeResult, Error>?
     
     let toRecipients: [String]
+    let subject: String
 
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
 
@@ -43,6 +44,7 @@ struct MailView: UIViewControllerRepresentable {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = context.coordinator
         vc.setToRecipients(toRecipients)
+        vc.setSubject(subject)
         return vc
     }
 

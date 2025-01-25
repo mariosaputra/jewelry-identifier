@@ -15,6 +15,9 @@
 		AC354D822B92DE6A0067F08C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC354D812B92DE6A0067F08C /* WebView.swift */; };
 		AC354D842B92DFCC0067F08C /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC354D832B92DFCC0067F08C /* SettingScreen.swift */; };
 		AC449D592D27D6B800D29731 /* fashion-jewelry.json in Resources */ = {isa = PBXBuildFile; fileRef = AC449D582D27D6B800D29731 /* fashion-jewelry.json */; };
+		AC46E1A42D44D0FB00D3508E /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AC46E1A32D44D0FB00D3508E /* FirebaseInAppMessaging-Beta */; };
+		AC46E1A62D44D25500D3508E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC46E1A52D44D25500D3508E /* GoogleService-Info.plist */; };
+		AC46E1A92D44E3C500D3508E /* StableID in Frameworks */ = {isa = PBXBuildFile; productRef = AC46E1A82D44E3C500D3508E /* StableID */; };
 		AC5C81832D2902CE00630EBE /* Scanning.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5C81822D2902CE00630EBE /* Scanning.json */; };
 		AC5EAC562C66337000DC0355 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EAC552C66337000DC0355 /* TitleView.swift */; };
 		AC5EAC5A2C665CE200DC0355 /* IdentifyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5EAC592C665CE200DC0355 /* IdentifyHistory.swift */; };
@@ -54,6 +57,7 @@
 		AC354D812B92DE6A0067F08C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AC354D832B92DFCC0067F08C /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		AC449D582D27D6B800D29731 /* fashion-jewelry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "fashion-jewelry.json"; sourceTree = "<group>"; };
+		AC46E1A52D44D25500D3508E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC5C81822D2902CE00630EBE /* Scanning.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Scanning.json; sourceTree = "<group>"; };
 		AC5EAC552C66337000DC0355 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		AC5EAC592C665CE200DC0355 /* IdentifyHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyHistory.swift; sourceTree = "<group>"; };
@@ -93,7 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC46E1A92D44E3C500D3508E /* StableID in Frameworks */,
 				AC33BC702C3E557400B4076B /* Lottie in Frameworks */,
+				AC46E1A42D44D0FB00D3508E /* FirebaseInAppMessaging-Beta in Frameworks */,
 				AC95F5912C19BA1E0092A99C /* AIProxy in Frameworks */,
 				AC31E02D2CB5082D0083236E /* RevenueCatUI in Frameworks */,
 				AC31E02B2CB5082D0083236E /* RevenueCat in Frameworks */,
@@ -201,6 +207,7 @@
 		AC8C2FD62B8DA674007A43EA /* JewelryIdentifier */ = {
 			isa = PBXGroup;
 			children = (
+				AC46E1A52D44D25500D3508E /* GoogleService-Info.plist */,
 				AC6CEB032C374807005202CF /* JewelryIdentifier.entitlements */,
 				AC95F58C2C194D7A0092A99C /* Info.plist */,
 				AC892A7F2C4983130094D232 /* Paywall */,
@@ -282,6 +289,8 @@
 				AC33BC6F2C3E557400B4076B /* Lottie */,
 				AC31E02A2CB5082D0083236E /* RevenueCat */,
 				AC31E02C2CB5082D0083236E /* RevenueCatUI */,
+				AC46E1A32D44D0FB00D3508E /* FirebaseInAppMessaging-Beta */,
+				AC46E1A82D44E3C500D3508E /* StableID */,
 			);
 			productName = JewelryIdentifier;
 			productReference = AC8C2FD42B8DA674007A43EA /* JewelryIdentifier.app */;
@@ -316,6 +325,8 @@
 				AC95F58F2C19BA1E0092A99C /* XCRemoteSwiftPackageReference "AIProxySwift" */,
 				AC33BC6E2C3E557400B4076B /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				AC31E0292CB5082D0083236E /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				AC46E1A22D44D0FB00D3508E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AC46E1A72D44E3C500D3508E /* XCRemoteSwiftPackageReference "StableID" */,
 			);
 			productRefGroup = AC8C2FD52B8DA674007A43EA /* Products */;
 			projectDirPath = "";
@@ -337,6 +348,7 @@
 				AC892A752C4834CA0094D232 /* InfoPlist.strings in Resources */,
 				AC8C2FDC2B8DA676007A43EA /* Assets.xcassets in Resources */,
 				ACD362E62CB98B0300C93009 /* five-star-rating.json in Resources */,
+				AC46E1A62D44D25500D3508E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +644,22 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		AC46E1A22D44D0FB00D3508E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.7.0;
+			};
+		};
+		AC46E1A72D44E3C500D3508E /* XCRemoteSwiftPackageReference "StableID" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:mariosaputra/StableID.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		AC95F57C2C15E71A0092A99C /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI.git";
@@ -665,6 +693,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC33BC6E2C3E557400B4076B /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		AC46E1A32D44D0FB00D3508E /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC46E1A22D44D0FB00D3508E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		AC46E1A82D44E3C500D3508E /* StableID */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC46E1A72D44E3C500D3508E /* XCRemoteSwiftPackageReference "StableID" */;
+			productName = StableID;
 		};
 		AC95F57D2C15E71A0092A99C /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
