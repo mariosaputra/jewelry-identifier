@@ -225,11 +225,11 @@ struct SettingScreen: View {
             TOSView()
         }
         .fullScreenCover(isPresented: $showPurchaseSheet) {
-//            PurchaseView(isPresented: $showPurchaseSheet)
-            if let offerings = purchaseModel.offerings,
-               let promoOffering = offerings.offering(identifier: "promo") {
-                PaywallView(offering: promoOffering, displayCloseButton: true)
-            }
+            PurchaseView(isPresented: $showPurchaseSheet)
+//            if let offerings = purchaseModel.offerings,
+//               let promoOffering = offerings.offering(identifier: "promo") {
+//                PaywallView(offering: promoOffering, displayCloseButton: true)
+//            }
         }
     }
 }
