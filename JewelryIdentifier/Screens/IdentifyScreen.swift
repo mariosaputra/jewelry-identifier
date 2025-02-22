@@ -265,7 +265,9 @@ struct IdentifyScreen: View {
             }
             
             let systemMessageContent = """
-            You are JewelryIdentifier App, an AI assistant created to help users identify jewelry from pictures. Analyze the jewelry in the image and provide details in RAW VALID JSON FORMAT, NO MARKDOWN, NOTHING ELSE. Include the following keys:
+            You are JewelryIdentifier App, an AI assistant created to help users identify jewelry from pictures. 
+            Analyze the jewelry in the image and provide details in RAW VALID JSON FORMAT, NO MARKDOWN, NOTHING ELSE.
+            Include the following keys and all keys' values must be string:
                 - name: A unique or descriptive name for the jewelry (e.g., "Victorian Diamond Brooch")
                 - type: Type of jewelry (e.g., ring, necklace)
                 - material: Material composition (e.g., gold, silver)
@@ -305,9 +307,17 @@ struct IdentifyScreen: View {
                     isLoading = false
                     self.inputImage = nil
                 } else if let data = content.data(using: .utf8) {
+                    do {
+//                    print("content : ", content)
                     let decodedResponse = try JSONDecoder().decode(JewelryInfo.self, from: data)
                     jewelryInfo = decodedResponse
                     isLoading = false
+                    } catch {
+                        infoText = "Failed to decode response: \(error.localizedDescription)"
+                        jewelryInfo = nil
+                        isLoading = false
+                        self.inputImage = nil
+                    }
                 } else {
                     infoText = "System error. Please try again."
                     jewelryInfo = nil
