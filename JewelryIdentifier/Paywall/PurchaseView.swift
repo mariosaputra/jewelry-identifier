@@ -25,12 +25,12 @@ struct PurchaseView: View {
     
     let placeholderProductDetails: [PurchaseProductDetails] = [
         PurchaseProductDetails(price: "24.99", productId: "jewelryid_yearly", duration: "year", durationPlanName: "Premium Annual", hasTrial: false),
-        PurchaseProductDetails(price: "4.99", productId: "jewelryid_weekly", duration: "week", durationPlanName: "Premium Weekly", hasTrial: true)
+        PurchaseProductDetails(price: "4.99", productId: "jewelryid_weekly", duration: "week", durationPlanName: "3-Day Trial", hasTrial: true)
     ]
     
     var callToActionText: String {
         if let selectedProductTrial = purchaseModel.productDetails.first(where: { $0.productId == selectedProductId })?.hasTrial {
-            return selectedProductTrial ? "Start Free Trial" : "Unlock Now"
+            return selectedProductTrial ? "Try for Free" : "Unlock Now"
         } else {
             return "Unlock Now"
         }
@@ -137,7 +137,7 @@ struct PurchaseView: View {
                                                 Text(productDetails.durationPlanName)
                                                     .font(.headline.bold())
                                                 if productDetails.hasTrial {
-                                                    Text(productDetails.price + " per " + productDetails.duration)
+                                                    Text("then " + productDetails.price + " per " + productDetails.duration)
                                                         .opacity(0.8)
                                                 } else {
                                                     HStack {
@@ -156,7 +156,7 @@ struct PurchaseView: View {
                                             }
                                             Spacer()
                                             if productDetails.hasTrial {
-                                                Text("")
+                                                Text("FREE")
                                                     .font(.title2.bold())
                                             } else {
                                                 VStack {
@@ -199,7 +199,7 @@ struct PurchaseView: View {
                             
                             HStack {
                                 Toggle(isOn: $freeTrial) {
-                                    Text("3-Day Free Trial")
+                                    Text("Free Trial Enabled")
                                         .font(.headline.bold())
                                 }
                                 .padding(.horizontal)

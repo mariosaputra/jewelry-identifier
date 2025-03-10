@@ -15,7 +15,7 @@ class PurchaseModel: ObservableObject {
     init() {
         self.productDetails = [
             PurchaseProductDetails(price: "$24.99", productId: "jewelryid_yearly", duration: "year", durationPlanName: "Premium Annual", hasTrial: false),
-            PurchaseProductDetails(price: "$4.99", productId: "jewelryid_weekly", duration: "week", durationPlanName: "Premium Weekly", hasTrial: true)
+            PurchaseProductDetails(price: "$4.99", productId: "jewelryid_weekly", duration: "week", durationPlanName: "3-Day Trial", hasTrial: true)
         ]
         
         Task {
